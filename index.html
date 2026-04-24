@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm Project</title>
+    <style>
+        /* Tag selectors */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, nav, section, article, aside, footer {
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* ID selectors */
+        #main-header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        #main-footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Class selectors */
+        .nav-link {
+            display: inline-block;
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .content-section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .aside-content {
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <h1>Midterm Project</h1>
+        <!-- Display name and course -->
+        <p id="student-info"></p>
+    </header>
+
+    <nav>
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a>
+    </nav>
+
+    <section class="content-section">
+        <h2>Main Section</h2>
+        <article>
+            <h3>Article Title</h3>
+            <p>This is an article inside the section.</p>
+        </article>
+    </section>
+
+    <aside class="aside-content">
+        <h3>Aside</h3>
+        <p>This is the aside content.</p>
+        <!-- User Input -->
+        <input type="text" id="user-input" placeholder="Enter something">
+        <button id="display-btn">Display Input</button>
+        <p id="output"></p>
+        <!-- Button Function -->
+        <button id="alert-btn">Show Alert</button>
+    </aside>
+
+    <footer id="main-footer">
+        <p>&copy; 2023 Midterm Project</p>
+        <!-- Links to published sites -->
+        <!-- Neocities Link: [Insert Neocities URL here] -->
+        <!-- GitHub Link: [Insert GitHub URL here] -->
+    </footer>
+
+    <script>
+        // A. Variables and Output
+        const name = "Jornel Atentar";
+        const course = "Web Development";
+        document.getElementById('student-info').textContent = `Name: ${name}, Course: ${course}`;
+
+        // B. Button Function
+        document.getElementById('alert-btn').addEventListener('click', function() {
+            alert('Button clicked!');
+        });
+
+        // C. User Input
+        document.getElementById('display-btn').addEventListener('click', function() {
+            const inputValue = document.getElementById('user-input').value;
+            document.getElementById('output').textContent = `You entered: ${inputValue}`;
+        });
+
+        // D. Event Handling - Change content dynamically (example: change header on click)
+        document.getElementById('main-header').addEventListener('click', function() {
+            this.style.backgroundColor = this.style.backgroundColor === 'rgb(51, 51, 51)' ? '#555' : '#333';
+        });
+    </script>
+</body>
+</html>
